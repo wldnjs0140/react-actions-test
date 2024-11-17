@@ -1,48 +1,34 @@
-import { useState, useRef } from 'react';
-import './App.css';
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import { Header } from './components/Header';
-import Menu from './components/Menu';
-import ChkBox from './components/ChkBox';
-import Modal from './components/Modal';
+import './App.css';
 
 function App() {
-  // Menu 에 foods라는 props 주기
-  const [foods, setFoods] = useState([
-    { foodType: '한식', foodMenu: ['김밥', '라면', '부침개'] },
-    { foodType: '중식', foodMenu: ['짜장', '짬뽕', '탕수육'] },
-    { foodType: '일식', foodMenu: ['돈카츠', '우동', '초밥'] },
-  ]);
-
-  // 모달 펑션
-  const [showModal, setShowModal] = useState(false);
-  const [mode, setMode] = useState('add'); // 모달 모드 상태 추가
-  const [editData, setEditData] = useState(null);
+  const [count, setCount] = useState(0);
 
   return (
-    <div>
-      <Header
-        setShowModal={(value) => {
-          setShowModal(value);
-          setMode('add'); // 추가 모드로 설정
-        }}
-      />
-      <Menu
-        foods={foods}
-        setFoods={setFoods}
-        setShowModal={setShowModal}
-        setMode={setMode}
-        setEditData={setEditData}
-      />
-      {showModal && (
-        <Modal
-          setShowModal={setShowModal}
-          setFoods={setFoods}
-          mode={mode}
-          editData={editData}
-        />
-      )}
-    </div>
+    <>
+      <div>
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.jsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
+    </>
   );
 }
 
