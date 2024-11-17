@@ -4,7 +4,6 @@ function Modal({ setShowModal, setFoods, mode, editData }) {
   const inputFoodType = useRef();
   const inputFoodMenu = useRef();
 
-  // 초기 값 세팅
   useEffect(() => {
     if (mode === 'edit' && editData) {
       inputFoodType.current.value = editData.foodType;
@@ -17,7 +16,6 @@ function Modal({ setShowModal, setFoods, mode, editData }) {
     const foodMenuRef = inputFoodMenu.current.value;
 
     if (mode === 'add') {
-      // 추가 로직
       setFoods((prev) => {
         const checkType = prev.find((food) => food.foodType === foodTypeRef);
         if (checkType) {
@@ -28,12 +26,11 @@ function Modal({ setShowModal, setFoods, mode, editData }) {
                 : food
             );
           }
-          return prev; // 이미 있는 경우 추가하지 않음
+          return prev;
         }
         return [...prev, { foodType: foodTypeRef, foodMenu: [foodMenuRef] }];
       });
     } else if (mode === 'edit') {
-      // 수정 로직
       setFoods((prev) =>
         prev.map((food) => {
           if (food.foodType === editData.foodType) {

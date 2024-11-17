@@ -2,26 +2,18 @@ import React, { useState } from 'react';
 
 function ChkBox(props) {
   const { chkItems, allChk, setAllChk } = props;
-  const [chkItem, setChkItem] = useState([]); // 개별 체크박스 상태
+  const [chkItem, setChkItem] = useState([]);
 
-  // 전체 체크박스를 클릭했을 때 동작하는 함수
   const handleAll = () => {
     if (allChk) {
-      setChkItem([]); // 전체 해제
+      setChkItem([]);
     } else {
-      setChkItem(chkItems); // 전체 선택
+      setChkItem(chkItems);
     }
-    setAllChk(!allChk); // 전체 체크 상태 반전
+    setAllChk(!allChk);
   };
 
-  // 개별 체크박스를 클릭했을 때 동작하는 함수
-  const handleChange = () => {
-    // if (chkItem.includes(item)) {
-    //     setChkItem(chkItem.filter((chk) => chk !== item));
-    // } else {
-    //     setChkItem([...chkItem, item]);
-    // }
-  };
+  const handleChange = () => {};
 
   return (
     <div>

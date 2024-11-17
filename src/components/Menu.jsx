@@ -14,33 +14,28 @@ function Menu(props) {
   };
   const handleEditMenu = (type, menu) => {
     setShowModal(true);
-    setEditData({ foodType: type, foodMenu: menu }); // 선택한 정보 전달
+    setEditData({ foodType: type, foodMenu: menu });
     setMode('edit');
   };
 
   const handlSearch = (type) => {
-    // console.log(type);
     setSearchType(type);
   };
 
-  // foodType 삭제
   const handleTypeDelete = (type) => {
     setFoods(foods.filter((food) => food.foodType !== type));
-    // console.log(foods.filter((food) => food.foodType !== type));
   };
 
-  // foodMenu 삭제
   const handleMenuDelete = (type, menu) => {
     setFoods((prev) => {
       return prev.map((food) => {
         if (food.foodType === type) {
-          // type에 맞는 foodMenu에서 특정 menu를 제외
           return {
             ...food,
             foodMenu: food.foodMenu.filter((item) => item !== menu),
           };
         }
-        return food; // 다른 음식들은 그대로 반환
+        return food;
       });
     });
   };
