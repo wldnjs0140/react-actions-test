@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import './App.css';
+import viteLogo from '/vite.svg';
 import { Header } from './components/Header';
 import Menu from './components/Menu';
 import ChkBox from './components/ChkBox';
