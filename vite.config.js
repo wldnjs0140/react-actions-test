@@ -2,11 +2,8 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { ghPages } from 'vite-plugin-gh-pages';
 
+// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), ghPages()],
-  base: '/react-actions-test/',
-  esbuild: {
-    loader: 'jsx', // .js 파일에서 JSX 처리
-    include: /src\/.*\.js$/, // src 디렉토리 내 .js 파일을 JSX로 처리
-  },
+  base: '/react-actions-test/', // base path 설정 (GitHub Pages에 맞게 수정)
 });
