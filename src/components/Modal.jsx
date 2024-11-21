@@ -1,12 +1,11 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect } from 'react';
 
 function Modal({ setShowModal, setFoods, mode, editData }) {
   const inputFoodType = useRef();
   const inputFoodMenu = useRef();
 
-  // 초기 값 세팅
   useEffect(() => {
-    if (mode === "edit" && editData) {
+    if (mode === 'edit' && editData) {
       inputFoodType.current.value = editData.foodType;
       inputFoodMenu.current.value = editData.foodMenu;
     }
@@ -16,12 +15,7 @@ function Modal({ setShowModal, setFoods, mode, editData }) {
     const foodTypeRef = inputFoodType.current.value;
     const foodMenuRef = inputFoodMenu.current.value;
 
-    if (!foodTypeRef || !foodMenuRef) {
-      alert("음식 타입과 메뉴를 입력해주세요!");
-      return;
-    }
-    if (mode === "add") {
-      // 추가 로직
+    if (mode === 'add') {
       setFoods((prev) => {
         const checkType = prev.find((food) => food.foodType === foodTypeRef);
         if (checkType) {
@@ -32,12 +26,11 @@ function Modal({ setShowModal, setFoods, mode, editData }) {
                 : food
             );
           }
-          return prev; // 이미 있는 경우 추가하지 않음
+          return prev;
         }
         return [...prev, { foodType: foodTypeRef, foodMenu: [foodMenuRef] }];
       });
-    } else if (mode === "edit") {
-      // 수정 로직
+    } else if (mode === 'edit') {
       setFoods((prev) =>
         prev.map((food) => {
           if (food.foodType === editData.foodType) {
@@ -61,12 +54,7 @@ function Modal({ setShowModal, setFoods, mode, editData }) {
       <div className="modal">
         <label>
           음식타입
-          <input
-            className="foodInput"
-            ref={inputFoodType}
-            type="text"
-            readOnly={mode === "edit"}
-          />
+          <input className="foodInput" ref={inputFoodType} type="text" />
         </label>
 
         <div className="modal_content">
@@ -78,7 +66,7 @@ function Modal({ setShowModal, setFoods, mode, editData }) {
 
         <div className="modal_btn">
           <button onClick={handleInsertOrUpdate}>
-            {mode === "add" ? "등록" : "수정"}
+            {mode === 'add' ? '등록' : '수정'}
           </button>
           <button onClick={() => setShowModal(false)}>닫기</button>
         </div>

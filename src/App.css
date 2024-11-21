@@ -1,8 +1,7 @@
 /* 기본 스타일 */
 body {
-  user-select: none;
   background-color: #f5f7fa;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #333;
   margin: 0;
   padding: 0;
@@ -100,15 +99,12 @@ body {
   text-transform: uppercase;
 }
 .menuDiv h3 button {
-  position: absolute; /* 버튼 위치를 li 내에서 고정 */
-  top: 50%; /* li의 수직 가운데 정렬 */
-  right: 40px; /* li의 오른쪽에서 10px 떨어짐 */
-  transform: translateY(-50%); /* 수직 가운데 정렬을 위한 보정 */
-  margin-left: 0; /* 기본 스타일 무시 */
+  position: absolute;
+  margin-left: 50px;
   padding-bottom: 5px;
   padding-top: 4px;
   border-radius: 50%;
-  font-size: 13px;
+  font-size: 12px;
   cursor: pointer;
   border: none;
   background-color: #3182ce;
@@ -116,37 +112,11 @@ body {
 }
 .menuDiv h3 button:hover {
   background-color: #2b6cb0;
-  font-weight: bold;
+  transform: translateY(-2px);
 }
-
-/* 음식 리스트 */
-.menuDiv ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.menuDiv ul li:hover {
-  color: #3182ce;
-  font-weight: bold;
-  cursor: pointer;
-}
-/* li 스타일 */
-.menuDiv ul li {
-  position: relative; /* 버튼 위치를 기준으로 삼기 위한 설정 */
-  font-size: 1.2em;
-  color: #555;
-  padding: 8px 0;
-  text-align: center; /* 텍스트를 왼쪽 정렬 */
-  transition: color 0.3s ease;
-}
-
-/* li 버튼 스타일 */
-.menuDiv ul li button {
-  position: absolute; /* 버튼 위치를 li 내에서 고정 */
-  top: 50%; /* li의 수직 가운데 정렬 */
-  right: 40px; /* li의 오른쪽에서 10px 떨어짐 */
-  transform: translateY(-50%); /* 수직 가운데 정렬을 위한 보정 */
-  margin-left: 0; /* 기본 스타일 무시 */
+li button {
+  position: absolute;
+  margin-left: 50px;
   padding-bottom: 5px;
   padding-top: 4px;
   border-radius: 50%;
@@ -156,12 +126,34 @@ body {
   background-color: #3182ce;
   color: #fff;
 }
-
-/* li 버튼 호버 스타일 */
-.menuDiv ul li button:hover {
+li button:hover {
   background-color: #2b6cb0;
-  font-weight: bold;
+  transform: translateY(-2px);
 }
+:any-link button:hover {
+  background-color: #2b6cb0;
+  transform: translateY(-2px);
+}
+/* 음식 리스트 */
+.menuDiv ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menuDiv ul li {
+  position: relative;
+  font-size: 1.2em;
+  color: #555;
+  padding: 8px 0;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.menuDiv ul li:hover {
+  color: #3182ce;
+  cursor: pointer;
+}
+
 /* 모바일 반응형 */
 @media (max-width: 768px) {
   .menuBtn {
@@ -267,7 +259,7 @@ body {
 /* 기본 스타일 */
 body {
   background-color: #f5f7fa;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #333;
   margin: 0;
   padding: 0;
@@ -378,100 +370,4 @@ body {
 .addButton:hover {
   background-color: #2b6cb0;
   transform: scale(1.05);
-}
-/* 전체 컨테이너 스타일 */
-.menu-container {
-  padding: 20px;
-  font-family: Arial, sans-serif;
-  background-color: #f9f9f9;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* 제목 스타일 */
-.menu-title {
-  font-size: 24px;
-  text-align: center;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-/* 카테고리 섹션 스타일 */
-.category-section {
-  margin-bottom: 30px;
-  padding: 15px;
-  background-color: #fff;
-  border-radius: 8px;
-  border: 1px solid #ddd;
-}
-
-/* 카테고리 제목 스타일 */
-.category-title {
-  font-size: 20px;
-  color: #555;
-  margin-bottom: 10px;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 5px;
-}
-
-/* 음식 항목 스타일 */
-.food-item {
-  margin-bottom: 15px;
-  padding: 10px;
-  border-bottom: 1px dashed #ddd;
-}
-
-.food-info {
-  font-size: 16px;
-  color: #444;
-  margin-bottom: 5px;
-}
-
-.food-description {
-  margin-left: 15px;
-  color: #666;
-  font-size: 14px;
-  font-style: italic;
-}
-
-/* 좋아요 카운트 강조 */
-.like-count {
-  font-weight: bold;
-  color: #ff4500;
-}
-
-/* 버튼 컨테이너 */
-.button-container {
-  margin-top: 10px;
-}
-
-/* 버튼 스타일 */
-.like-button,
-.dislike-button {
-  padding: 5px 10px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-.like-button {
-  background-color: #4caf50;
-  color: #fff;
-}
-
-.dislike-button {
-  background-color: #f44336;
-  color: #fff;
-}
-
-.like-button:hover {
-  background-color: #45a049;
-}
-
-.dislike-button:hover {
-  background-color: #d32f2f;
 }

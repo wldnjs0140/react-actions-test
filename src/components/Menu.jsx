@@ -6,8 +6,8 @@ function Menu(props) {
 
   const Foodmenu = ({ menu, type }) => {
     return (
-      <li>
-        <span onClick={() => handleEditMenu(type, menu)}>{menu}</span>
+      <li onClick={() => handleEditMenu(type, menu)}>
+        {menu}
         <button onClick={() => handleMenuDelete(type, menu)}>x</button>
       </li>
     );
